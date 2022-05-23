@@ -1,0 +1,5 @@
+doc
+.idea
+**/tests
+jest.*
+tsconfig.json

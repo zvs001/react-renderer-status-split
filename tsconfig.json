@@ -1,0 +1,6 @@
+{
+  "extends": "module-kit/tsconfig",
+  "compilerOptions": {
+    "jsx": "react"
+  }
+}

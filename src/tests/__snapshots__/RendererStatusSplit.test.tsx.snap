@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`error renders correct 1`] = `
+<div>
+  error: 
+  unexpected
+</div>
+`;
+
+exports[`isDone renders empty when no data 1`] = `
+<div>
+  empty component
+</div>
+`;
+
+exports[`isDone renders empty when no data 2`] = `
+<div>
+  render data
+</div>
+`;
+
+exports[`isDone renders with data 1`] = `
+<div>
+  render data
+</div>
+`;
+
+exports[`isEmpty(false) can skip loading state and proceed to render() 1`] = `
+<div>
+  render data
+</div>
+`;
+
+exports[`isEmpty(false) is handled correctly 1`] = `
+<div>
+  render data
+</div>
+`;
+
+exports[`isEmpty(true) is handled correctly 1`] = `
+<div>
+  empty component
+</div>
+`;
+
+exports[`isLoading renders correct 1`] = `
+<div>
+  loading
+</div>
+`;
+
+exports[`renders default when no handlers 1`] = `
+<div>
+  render data
+</div>
+`;
+
+exports[`renders preview before statuses change 1`] = `
+<div>
+  preview
+</div>
+`;
