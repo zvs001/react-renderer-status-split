@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import { ReactElement } from 'react'
+import React, {ReactElement, ReactNode} from 'react'
 
 interface Props<DataType> {
   statuses: {
@@ -9,14 +9,14 @@ interface Props<DataType> {
     error?: string
   }
   isEmpty?: boolean
-  renderError?: (error: string) => ReactElement
-  renderLoading?: () => ReactElement
-  renderPreview?: () => ReactElement | null
-  renderEmpty?: () => ReactElement
-  render: (data: this['renderEmpty'] extends undefined ? DataType | undefined : DataType) => ReactElement
+  renderError?: (error: string) => ReactNode
+  renderLoading?: () => ReactNode
+  renderPreview?: () => ReactNode
+  renderEmpty?: () => ReactNode
+  render: (data: this['renderEmpty'] extends undefined ? DataType | undefined : DataType) => ReactNode
 }
 
-function RendererStatusSplit<DataType = any>(props: Props<DataType>) {
+function RendererStatusSplit<DataType = any>(props: Props<DataType>): ReactElement | null {
   const { statuses, render, renderError, renderLoading, renderEmpty, renderPreview, isEmpty } = props
   const { isLoading, isDone, data, error } = statuses
 
@@ -30,25 +30,25 @@ function RendererStatusSplit<DataType = any>(props: Props<DataType>) {
   }
 
   if (isLoading && renderLoading) {
-    return renderLoading()
+    return (<>{renderLoading()}</>)
   }
 
   if (error && renderError) {
-    return renderError(error)
+    return <>{renderError(error)}</>
   }
 
   if (!_.isUndefined(isDone) && !isDone && !_.isUndefined(renderPreview)) {
-    if (_.isFunction(renderPreview)) return renderPreview()
+    if (_.isFunction(renderPreview)) return <>{renderPreview()}</>
     return null
   }
 
 
 
   if (isDataEmpty && renderEmpty) {
-    return renderEmpty()
+    return <>{renderEmpty()}</>
   }
 
-  return render(data as DataType)
+  return <>{render(data as DataType)}</>
 }
 
 export default RendererStatusSplit
