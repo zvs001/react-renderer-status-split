@@ -1,6 +1,6 @@
 {
   "name": "react-renderer-status-split",
-  "version": "0.0.1-rc.1",
+  "version": "0.0.1",
   "main": "index.js",
   "types": "./index.d.ts",
   "scripts": {
@@ -12,6 +12,10 @@
     "type": "git",
     "url": "https://github.com/zvs001/react-renderer-status-split"
   },
+  "keywords": [
+    "react",
+    "react-native"
+  ],
   "devDependencies": {
     "@babel/runtime": "^7.18.0",
     "@types/jest": "^27.5.1",
