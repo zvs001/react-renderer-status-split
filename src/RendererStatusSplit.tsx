@@ -20,11 +20,12 @@ function RendererStatusSplit<DataType = any>(props: Props<DataType>): ReactEleme
   const { statuses, render, renderError, renderLoading, renderEmpty, renderPreview, isEmpty } = props
   const { isLoading, isDone, data, error } = statuses
 
-  let isDataEmpty = !data
+  let isDataEmpty = _.isEmpty(data)
   if(props.hasOwnProperty('isEmpty')) {
     isDataEmpty = !!isEmpty
   }
 
+  // Early return when data is defined for example by isEmpty prop
   if(!isDataEmpty) { // @ts-ignore
     return render(data)
   }
