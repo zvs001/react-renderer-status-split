@@ -1,5 +1,10 @@
 doc
 .idea
+**/test
 **/tests
 jest.*
 tsconfig.json
+
+**/*.ts
+**/*.tsx
+!**/*.d.ts
